@@ -1,5 +1,7 @@
 <?php
 
+require "../functions.php";
+
 function checkAgeValid($userAge):void{
 	if(!is_numeric($userAge)||(int)$userAge<0)
 	{
