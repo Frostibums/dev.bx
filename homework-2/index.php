@@ -6,5 +6,5 @@ require "functions.php";
 require "./homework-2-functions/homework-2-functions.php";
 
 $userAge=readline("Enter your age: ");
-checkAgeValid((int)$userAge);
+checkAgeValid($userAge);
 printSuggested($movies, (int)$userAge);

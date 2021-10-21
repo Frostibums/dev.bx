@@ -1,6 +1,6 @@
 <?php
 
-function checkAgeValid(int $userAge):void{
+function checkAgeValid($userAge):void{
 	if(!is_numeric($userAge)||$userAge<0)
 	{
 		printMessage("Wrong age.");
