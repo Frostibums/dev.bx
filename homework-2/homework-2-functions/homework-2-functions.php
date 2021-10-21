@@ -16,23 +16,16 @@ function isMovieAllowed(array $movie, int $userAge):bool{
 	return $movie["age_restriction"]<=$userAge;
 }
 
-function createSuggested(array $movies, int $userAge):array
+function printSuggested(array $movies, int $userAge):void
 {
+	$counter=0;
 	foreach ($movies as $movie)
 	{
 		if (isMovieAllowed($movie, $userAge))
 		{
-			$suggestedMovies[] = formatMovie($movie);
+			$counter++;
+			$formatedMovie=formatMovie($movie);
+			printMessage("{$counter}. {$formatedMovie}");
 		}
-	}
-	return $suggestedMovies;
-}
-
-function printSuggested(array $suggestedMovies):void
-{
-	foreach ($suggestedMovies as $movieIndex=>$movie)
-	{
-		$movieIndex++;
-		printMessage("{$movieIndex}. {$movie}");
 	}
 }
