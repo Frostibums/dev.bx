@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+.wrapper {
+	display: flex;
+	overflow: hidden;
+	height: 100vh;
+	background: #F2F2F2;
+}
+
+.sidebar{
+	width: 400px;
+	background: #383838;
+}
+
+.menu{
+	display: flex;
+	margin: 0 30px;
+	flex-direction: column;
+}
+
+.item{
+	border-bottom: 1px solid rgba(242, 242, 242, 0.1);
+	margin: 0 15px;
+}
+.item:last-child {
+	border: none;
+}
+
+.item a{
+	display: flex;
+	text-decoration: none;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 22px;
+	align-items: center;
+	text-transform: uppercase;
+	padding: 24px 15px;
+	color: #B7B7B7;
+}
+
+.item a:hover,.item--active a{
+	color: #FFFFFF;
+	background: rgba(255, 255, 255, 0.05);
+}
+
+.container{
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+}
+
+.header{
+	display: flex;
+	height: 88px;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+}
+
+.content{
+	overflow: auto;
+	display: flex;
+}
