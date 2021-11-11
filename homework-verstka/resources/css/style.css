@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
+::-webkit-scrollbar {
+	width: 0;
+}
+
 .wrapper {
 	display: flex;
 	overflow: hidden;
@@ -8,6 +12,7 @@
 }
 
 .sidebar{
+	overflow: auto;
 	width: 400px;
 	background: #383838;
 }
