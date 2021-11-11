@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+.wrapper {
+	display: flex;
+	overflow: hidden;
+	height: 100vh;
+	background: #F2F2F2;
+}
+
+.sidebar{
+	width: 400px;
+	background: #383838;
+}
+
+.menu{
+	display: flex;
+	margin: 0 30px;
+	flex-direction: column;
+}
+
+.item{
+	border-bottom: 1px solid rgba(242, 242, 242, 0.1);
+	margin: 0 15px;
+}
+.item:last-child {
+	border: none;
+}
+
+.item a{
+	display: flex;
+	text-decoration: none;
+	font-family: 'Open Sans', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 22px;
+	align-items: center;
+	text-transform: uppercase;
+	padding: 24px 15px;
+	color: #B7B7B7;
+}
+
+.item a:hover,.item--active a{
+	color: #FFFFFF;
+	background: rgba(255, 255, 255, 0.05);
+}
+
+.container{
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+}
+
+.header{
+	height: 88px;
+	background: #FFFFFF;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-bar{
+	display: flex;
+	justify-content: space-between;
+	margin: 26px 51px 21px 43px;
+	font-family: 'Open Sans', sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 40px;
+}
+
+.search{
+	display: flex;
+	height: 40px;
+	padding-left: 25px;
+}
+
+.search-bar{
+	display: flex;
+	align-items: center;
+	position: relative;
+	width: 777px;
+	padding-left: 15px;
+	border-bottom: #C4C4C4 1px solid;
+}
+
+.search-icon{
+	position: absolute;
+	left: 0;
+	width: 24px;
+	height: 24px;
+	background: url("../images/icon-search.svg") center no-repeat;
+}
+
+.search-line{
+	height: 40px;
+	width: 100%;
+	margin: 0 15px;
+	border: none;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 40px;
+	color: #999999;
+}
+
+.search-button{
+	margin-left: 15px;
+	width: 89px;
+	height: 40px;
+	background: #E7A04E;
+	border-radius: 7px;
+	text-align: center;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.search-button:hover{
+	color: #fff1cc;
+}
+
+.add-movie-button{
+	width: 158px;
+	height: 40px;
+	margin: 0 51px;
+	background: #4EE7B0;
+	border-radius: 7px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #FFFFFF;
+}
+
+.add-movie-button:hover{
+	color: #e6fff6;
+}
+
+.content{
+	overflow: auto;
+	display: flex;
+}
+
+.logo{
+	margin-left: 90px;
+	margin-top: 60px;
+	margin-bottom: 45px;
+}
+
+.movie-list--item{
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	margin: 15px;
+	width: 370px;
+	height: 700px;
+	background: #FFFFFF;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+	border-radius: 20px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.movie-list--item-overlay{
+	display: flex;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 9;
+	background: rgba(0, 0, 0, 0.7);
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: 0.2s;
+}
+
+.movie-list--item:hover .movie-list--item-overlay{
+	opacity: 1;
+}
+
+.movie-list--item-more{
+	display: inline-flex;
+	width: 220px;
+	height: 56px;
+	background: #4EE7B0;
+	border-radius: 7px;
+	font-family: 'Open Sans', sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	align-items: center;
+	justify-content: center;
+	color: #FFFFFF;
+}
+
+.movie-list--item-image{
+	display: block;
+	height: 430px;
+	background-size: cover;
+	border-radius: 20px 20px 0 0;
+}
+
+.movie-list--item-head{
+	display: block;
+	margin: 0 20px;
+	padding: 12px 0 15px 0;
+}
+
+.movie-list--item-title{
+	font-weight: 600;
+	font-size: 22px;
+	line-height: 30px;
+	color: #333333;
+}
+
+.movie-list--item-subtitle{
+	margin-bottom: 15px;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 25px;
+	color: #999999;
+}
+
+.movie-list--item-wrapper{
+	display: block;
+	height: 1px;
+	background: #F2F2F2;
+}
+
+.movie-list--item-description{
+	min-height: 100px;
+	margin: 0 20px 23px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 20px;
+	color: #333333;
+}
+
+.movie-list--item-bottom{
+	display: flex;
+	justify-content: space-between;
+	margin: 0 20px;
+	white-space: nowrap;
+}
+
+.movie-list--item-time{
+	position: relative;
+	padding-left: 25px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 22px;
+	color: #CCCCCC;
+}
+
+.movie-list--item-time--icon{
+	position: absolute;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	background: url("../images/icon-clock.svg") center no-repeat;
+}
+
+.movie-list--item-genre{
+	text-transform: uppercase;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 10px;
+	line-height: 22px;
+	color: #CCCCCC;
+}
