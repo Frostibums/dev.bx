@@ -7,12 +7,18 @@ require_once "./data/movies/movies.php";
 require_once "./lib/template-functions.php";
 require_once "./lib/movie-functions.php";
 
-$currentGenre=($_GET['genre']);
+if(isset($_GET['genre']))
+{
+	$currentGenre=$_GET['genre'];
+	$movies=getMoviesByGenre($movies, $genres, $currentGenre);
+}
+else
+{
+	$currentGenre='';
+}
 
 $main=renderTemplate("./resources/pages/main.php", [
-	'movies'=>$movies,
-	'genres'=>$genres,
-	'currentGenre'=>$currentGenre
+	'movies'=>$movies
 ]);
 
 // render layout

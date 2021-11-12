@@ -36,7 +36,7 @@
 					</tr>
 					<tr>
 						<td class="table-leftside">В главных ролях:</td>
-						<td class="table-rightside"><?=makeStrOutOfArray($movie['cast'])?></td>
+						<td class="table-rightside"><?=implode(', ', $movie['cast'])?></td>
 					</tr>
 				</table>
 			</div>

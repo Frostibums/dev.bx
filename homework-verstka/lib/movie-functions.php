@@ -8,13 +8,16 @@ function makeTitle(string $title, string $date):string{
 	return "{$title} ({$date})";
 }
 
-function makeStrOutOfArray(array $arr):string{
-	$result='';
-	foreach ($arr as $value)
+function makeShortTitle(string $title, string $date):string{
+	if(mb_strlen($title)>20)
 	{
-		$result="{$result}, {$value}";
+		return mb_substr($title, 0, 20).'...';
 	}
-	return substr($result,2);
+	if(mb_strlen("{$title} ({$date})")>23)
+	{
+		return $title;
+	}
+	return "{$title} ({$date})";
 }
 
 function getDurationStr(int $duration):string{
@@ -48,4 +51,27 @@ function isGenreInMovie(string $genre, array $movieGenres):bool{
 		}
 	}
 	return false;
+}
+
+function getMoviesByGenre(array $movies, array $genres, string $genre):array{
+	$result=[];
+	foreach ($movies as $movie)
+	{
+		if(isGenreInMovie($genres[$genre], $movie['genres'])){
+			$result[]=$movie;
+		}
+
+	}
+	return $result;
+}
+
+function getMovieById(array $movies, int $id):array{
+	foreach ($movies as $movie)
+	{
+		if($id==$movie['id'])
+		{
+			return $movie;
+		}
+	}
+	return [];
 }

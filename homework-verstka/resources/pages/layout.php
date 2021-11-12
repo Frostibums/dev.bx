@@ -23,7 +23,7 @@
 			<img src="./resources/images/logo.svg" alt="Bitflix">
 		</div>
 		<ul class="menu">
-			<li class="item <?=$currentGenre===NULL&&$currentPage==='index'?'item--active':''?>">
+			<li class="item <?=$currentPage==='index'&&$currentGenre==''?'item--active':''?>">
 				<a href="index.php">Главная</a>
 			</li>
 			<?php foreach($genres as $code=>$name):?>
@@ -31,7 +31,7 @@
 				<a href="index.php?genre=<?=$code?>"><?= $name ?></a>
 			</li>
 			<?php endforeach;?>
-			<li class="item <?=$currentGenre===NULL&&$currentPage==='favourite'?'item--active':''?>">
+			<li class="item <?=$currentPage==='favourite'?'item--active':''?>">
 				<a href="favourite.php">Избранное</a>
 			</li>
 		</ul>

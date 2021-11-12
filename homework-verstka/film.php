@@ -7,19 +7,24 @@ require_once "./data/movies/movies.php";
 require_once "./lib/template-functions.php";
 require_once "./lib/movie-functions.php";
 
+
 if(isset($_GET['id']))
 {
-	$id=(int)$_GET['id']-1;
+	$movie=getMovieById($movies, (int)$_GET['id']);
 }
-$currentGenre=($_GET['genre']);
+
+if(!isset($_GET['id'])||$movie==[])
+{
+	header('Location: index.php');
+}
 
 $filmpage=renderTemplate("./resources/pages/filmpage.php", [
-	'movie'=>$movies[$id]
+	'movie'=>$movie
 ]);
 
 // render layout
 renderLayout($filmpage, [
 	'genres'=>$genres,
-	'currentGenre'=>$currentGenre,
+	'currentGenre'=>'',
 	"currentPage"=>getFileName(__FILE__)
 ]);
